@@ -1,0 +1,4 @@
+1.在settings.py文件中设置 LOGIN_REDIRECT_URL | LOGIN_URL| LOGOUT_URL; 分别表示：
+LOGIN_REDIRECT_URL: 如果请求中未出现next参数，在成功登录后，将通知Django重定向的URL
+LOGIN_URL: 用户重定向并实现登录的URL(例如使用login_required装饰器的视图)
+LOGOUT_URL：用户重定向并实现注销的URL

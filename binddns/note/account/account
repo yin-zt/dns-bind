@@ -1,0 +1,7 @@
+# 以下信息记录account应用的注意事项
+1. 使用django验证框架的 LoginView视图时，需要在templates目录中生成一个registration目录，这是django身份验证视图所期望的验证模板的默认路径
+2. 编辑项目中的settings.py文件并添加下列代码：
+EMAIL_BACKEND = 'django.core.mail.backend.console.EmailBackend'  # EMAIL_BACKEND设置表明发送邮件所使用的相关类
+
+
+
