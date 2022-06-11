@@ -1,0 +1,20 @@
+{% extends "dns/dnsbase.html" %}
+ 
+{% block title %}DNS{% endblock %}
+ 
+{% block content %}
+  <h1>DNS Records</h1>
+  {% for dns in dnss %}
+    <h2>
+      <a href="{{ dns.get_absolute_url }}">
+        {{ dns.domain }}
+      </a>
+    </h2>
+    <p class="date">
+      created {{ dns.created }} by {{ dns.candidates_person }}
+      responsible by {{ dns.charge_person }}
+    </p>
+    {{ post.body|truncatewords:30|linebreaks }}
+  {% endfor %}
+{#  {% include "pagination.html" with page=page_obj %}#}
+{% endblock %}

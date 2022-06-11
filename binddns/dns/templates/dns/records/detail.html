@@ -1,0 +1,10 @@
+{% extends "dns/dnsbase.html" %}
+
+{% block title %} {{ dns.domain }}{% endblock %}
+
+{% block content %}
+    <h1>{{ dns.id }}</h1>
+<h1>{{ dns.domain }}</h1>
+<h1>{{ dns.target }}</h1>
+    created {{ dns.created }} by {{ dns.charge_person }}
+{% endblock %}
