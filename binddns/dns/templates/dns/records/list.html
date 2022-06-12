@@ -4,17 +4,43 @@
  
 {% block content %}
   <h1>DNS Records</h1>
-  {% for dns in dnss %}
-    <h2>
-      <a href="{{ dns.get_absolute_url }}">
-        {{ dns.domain }}
-      </a>
-    </h2>
-    <p class="date">
-      created {{ dns.created }} by {{ dns.candidates_person }}
-      responsible by {{ dns.charge_person }}
-    </p>
-    {{ post.body|truncatewords:30|linebreaks }}
-  {% endfor %}
+
+<table class="laoye-table" border="1" cellspacing="0" cellpadding="20">
+    <thead>
+    <tr>
+        <th style="width: 90px;">ID</th>
+        <th style="width: 90px;">Domain</th>
+{#        <th style="width: 90px;">View</th>#}
+        <th style="width: 90px;">Zone</th>
+        <th style="width: 90px;">Type</th>
+        <th style="width: 90px;">Target</th>
+{#        <th style="width: 90px;">Target_slave</th>#}
+        <th style="width: 90px;">Target_slave_flag</th>
+{#        <th style="width: 90px;">申请人</th>#}
+        <th style="width: 90px;">负责人</th>
+        <th style="width: 90px;">创建时间</th>
+        <th style="width: 90px;">更新时间</th>
+    </tr>
+    </thead>
+          <tbody>
+                {% for dns in dnss %}
+          <tr>
+              <td class="num">{{ dns.id }}</td>
+              <td>{{ dns.domain }}</td>
+{#              <td>dns.view</td>#}
+              <td>{{ dns.zone }}</td>
+              <td>{{ dns.type }}</td>
+              <td>{{ dns.target }}</td>
+{#              <td>dns.target_slave</td>#}
+              <td>{{ dns.target_slave_flag }}</td>
+{#              <td>dns.candidates_person</td>#}
+              <td>{{ dns.charge_person }}</td>
+              <td>{{ dns.created }}</td>
+              <td>{{ dns.updated }}d</td>
+          </tr>
+            {% endfor %}
+          </tbody>
+    </table>
+
 {#  {% include "pagination.html" with page=page_obj %}#}
 {% endblock %}
