@@ -1,0 +1,7 @@
+<ul>
+    {% for zone in most_zones %}
+    <li>
+        <a href="{% url "dns:dns_list_by_zone" zone %}">{{ zone }}</a>
+    </li>
+    {% endfor %}
+</ul>

@@ -1,4 +1,5 @@
 {% load static %}
+{% load dns_tags %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,8 +12,13 @@
         {% endblock %}
     </div>
 <div id="sidebar">
-    <h2>Dns Record</h2>
-    <p>DNS</p>
+    <h2>Latest DNS</h2>
+    {% show_latest_dnss %}
+</div>
+
+<div id="sidebar">
+    <h2>Big Zone</h2>
+    {% most_zones %}
 </div>
 </body>
 </html>

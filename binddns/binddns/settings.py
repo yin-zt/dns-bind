@@ -65,6 +65,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            'libraries': {'dns_tags': 'dns.templatetags.dns_tags'}
         },
     },
 ]

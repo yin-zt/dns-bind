@@ -1,0 +1,7 @@
+<ul>
+    {% for dns in latest_dnss %}
+    <li>
+        <a href="{{ dns.get_absolute_url }}">{{ dns.domain }}</a>
+    </li>
+    {% endfor %}
+</ul>
